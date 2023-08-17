@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>member</title>
+    <link rel="stylesheet" href="../static/member_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="body">
+        <div class="left_bar">
+            <h2>Hello,{{name}}</h2>
+            <form action="/api/member" id="searchName" method="get">
+                <input type="text" name="name" placeholder="搜尋...">
+                <button type="submit" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button><br>
+                <div id="show"></div><br>
+            </form>
+            <div id="about"></div>
+            <br>
+            <div>How is your day</div>
+            <form id="form" action="/createMessage" method="post" >
+                <textarea name="content" placeholder="填入訊息..." rows="4"></textarea>>
+                <button type="submit" id="message">send</button>
+            </form>
+            
+        </div>
+        <div class="right_bar">
+            <nav>
+                <a href="/" id="signout"><i class="fa-solid fa-person-running"></i></a>
+                <a href="#" id="setting"><i class="fa-solid fa-gear"></i></a>
+            </nav>
+            <div id="container">  
+                {% for username,content in element %}
+                <div>
+                    <div class='userPhoto'>
+                        <img src = '../static/image/user.png' style='width:40px'></img>
+                        <div>{{username}}</div>
+                    </div>
+                    <div class='text'>{{content}}</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <script type = "text/javascript" src="../static/member_script.js"></script>
+</body>
+</html>

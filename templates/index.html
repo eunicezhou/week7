@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signin & Signup</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class = "container">
+        <div class="header">歡迎光臨，請註冊登入系統</div>
+        <div class = "file">
+            <div class="class">註冊帳號</div>
+            <form action="/signup" method="post" id = "form1">
+                姓名:<input type = "text" name = "name" class = "fillup" autoComplete = "Off"><br>
+                <div class="red"><i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i>此欄位未輸入</div>
+                <div class="green"><i class="fa-solid fa-check" style="color: #31a300;"></i>欄位已完成</div><br>
+                帳號:<input type = "text" name = "account" class = "fillup" autoComplete = "Off"><br>
+                <div class="red"><i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i>此欄位未輸入</div>
+                <div class="green"><i class="fa-solid fa-check" style="color: #31a300;"></i>欄位已完成</div><br>
+                密碼:<input type = "password" name = "password" class = "fillup" autoComplete = "Off"><br>
+                <div class="red"><i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i>此欄位未輸入</div>
+                <div class="green"><i class="fa-solid fa-check" style="color: #31a300;"></i>欄位已完成</div><br>
+                <button type = "submit">註冊</button>
+            </form>
+        </div>
+        <div class = "file">
+            <div class="class">登入系統</div>
+            <form action="/signin" method="post" id = "form2">
+                帳號:<input type = "text" name = "account" class = "fillup" autoComplete = "Off">
+                <div class="red"><i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i>此欄位未輸入</div>
+                <div class="green"><i class="fa-solid fa-check" style="color: #31a300;"></i>欄位已完成</div><br>
+                密碼:<input type = "password" name = "password" class = "fillup" autoComplete = "Off">
+                <div class="red"><i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i>此欄位未輸入</div>
+                <div class="green"><i class="fa-solid fa-check" style="color: #31a300;"></i>欄位已完成</div><br>
+                <button type = "submit">登入</button><br>
+            </form>
+        </div>
+    </div>
+    <script type = "text/javascript" src = "{{url_for('static',filename = 'script.js')}}">
+    </script>
+</body>
+</html>
